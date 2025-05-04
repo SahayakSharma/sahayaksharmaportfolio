@@ -1,103 +1,68 @@
-import Image from "next/image";
 
+import Link from "next/link";
+import Image from "next/image";
+import { projectdetails } from "@/lib/projects";
+import { codingplatformdetails } from "@/lib/platform";
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="w-fit mx-auto min-h-screen p-5">
+      <h1 className="text-[70px] md:text-[100px] cascadia-code-bold">Sahayak Sharma</h1>
+      <Link href="https://drive.google.com/file/d/1SzEjzktRrzo6BYCEQqdvdGTB6LYqicfV/view?usp=sharing" className="text-[15px] md:text-[20px] cascadia-code-light text-blue-500 underline">View Resume</Link>
+      <section className="cascadia-code-light py-20 flex flex-col gap-5">
+        <div className="flex gap-5"><Image src="/logos/mail.svg" alt="image here" width={20} height={20} /><p>sahayaksharma6@gmail.com</p></div>
+        <div className="flex gap-5"><Image src="/logos/linkedin.svg" alt="image here" width={20} height={20} /><p>linkedin.com/SahayakSharma</p></div>
+        <div className="flex gap-5"><Image src="/logos/github.svg" alt="image here" width={20} height={20} /><p>github.com/Sahayak-Sharma</p></div>
+      </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <section>
+        <h1 className="text-2xl cascadia-code-medium pb-10">Best Work</h1>
+        <div className="flex flex-col md:flex-row gap-10 md:gap-20">
+          {
+            projectdetails.map((project, index) => {
+              return (
+                <div className="flex flex-col gap-3 cascadia-code-light" key={index}>
+                  <h2 className="text-xl underline">{project.title}</h2>
+                  <div className="flex gap-3">
+                    <p>Description  : </p>
+                    <Link href={project.descriptionLink}>{project.descriptionLabel}</Link>
+                  </div>
+                  <div className="flex gap-3">
+                    <p>Preview  : </p>
+                    <Link href={project.previewLink}>{project.previewLabel}</Link>
+                  </div>
+                  <div className="flex gap-3">
+                    <p>Application Code  : </p>
+                    <Link href={project.codeLink}>{project.codeLabel}</Link>
+                  </div>
+                </div>
+              )
+            })
+          }
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      <section className="py-20">
+        <h1 className="cascadia-code-medium text-xl pb-10">Coding Platforms</h1>
+        <div className="flex flex-col md:flex-row gap-10 md:gap-20">
+          {
+            codingplatformdetails.map((platform, index) => {
+              return (
+                <div className="flex flex-col gap-3 cascadia-code-light" key={index}>
+                  <h2 className="text-xl underline capitalize">{platform.name}</h2>
+                  <div className="flex gap-3">
+                    <p>Rating  : </p>
+                    <p>{platform.rating}</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <p>Profile : </p>
+                    <Link href={platform.profileLink}>{platform.profileLabel}</Link>
+                  </div>
+                </div>
+              )
+            })
+          }
+        </div>
+      </section>
+    </main>
   );
 }
