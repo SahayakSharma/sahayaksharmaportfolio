@@ -10,11 +10,11 @@ export default function Home() {
       <Link href="https://drive.google.com/file/d/1SzEjzktRrzo6BYCEQqdvdGTB6LYqicfV/view?usp=sharing" className="text-[15px] md:text-[20px] cascadia-code-light text-blue-500 underline">View Resume</Link>
       <section className="cascadia-code-light py-20 flex flex-col gap-5">
         <div className="flex gap-5"><Image src="/logos/mail.svg" alt="image here" width={20} height={20} /><p>sahayaksharma6@gmail.com</p></div>
-        <div className="flex gap-5"><Image src="/logos/linkedin.svg" alt="image here" width={20} height={20} /><p>linkedin.com/SahayakSharma</p></div>
-        <div className="flex gap-5"><Image src="/logos/github.svg" alt="image here" width={20} height={20} /><p>github.com/Sahayak-Sharma</p></div>
+        <div className="flex gap-5"><Image src="/logos/linkedin.svg" alt="image here" width={20} height={20} /><Link href="https://www.linkedin.com/in/sahayak-sharma/">linkedin.com/sahayak-sharma</Link></div>
+        <div className="flex gap-5"><Image src="/logos/github.svg" alt="image here" width={20} height={20} /><Link href="https://github.com/SahayakSharma">github.com/SahayakSharma</Link></div>
       </section>
 
-      <section>
+      <section>Link
         <h1 className="text-2xl cascadia-code-medium pb-10">Best Work</h1>
         <div className="flex flex-col md:flex-row gap-10 md:gap-20">
           {
