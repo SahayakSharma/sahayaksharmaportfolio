@@ -1,10 +1,9 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 
 export default function Page() {
   // IntersectionObserver for reveal effects
-  const revealRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const els = document.querySelectorAll('.reveal, .section, .card, .project');
