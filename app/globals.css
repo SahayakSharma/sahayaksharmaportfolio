@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
 
+html {
+  scroll-behavior:smooth;
+}
 
 .cascadia-code-bold {
   font-family: "Cascadia Code", sans-serif;
